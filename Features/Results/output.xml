@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.4 on win32)" generated="20210623 12:16:56.152" rpa="false" schemaversion="2">
+<suite id="s1" name="TestProjetoCliente" source="C:\Users\alexandre.silva\Documents\Alexandre\Meus Projetos\Testes  Automatizados\Projeto Cliente\Tests\TestProjetoCliente.robot">
+<kw name="Abrir Navegador" library="Base" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${NAVEGADOR.pagina}</arg>
+<arg>${NAVEGADOR.navegador}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210623 12:16:56.554" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210623 12:16:56.554" endtime="20210623 12:16:57.999"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210623 12:16:58.000" endtime="20210623 12:16:58.122"/>
+</kw>
+<status status="PASS" starttime="20210623 12:16:56.553" endtime="20210623 12:16:58.123"/>
+</kw>
+<test id="s1-t1" name="CT01 - Acessar Tela Login">
+<kw name="1 - Acessar Página de Login" library="PO_Login">
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${linkHome}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20210623 12:16:58.129" level="INFO">Opening url 'https://estivalet.github.io/robot-static-testing-site/index.html'</msg>
+<status status="PASS" starttime="20210623 12:16:58.128" endtime="20210623 12:17:02.599"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${textoInicialHome}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210623 12:17:02.599" endtime="20210623 12:17:02.617"/>
+</kw>
+<status status="PASS" starttime="20210623 12:16:58.126" endtime="20210623 12:17:02.617"/>
+</kw>
+<kw name="2 - Preencher Campos de Login" library="PO_Login">
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:03.626" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:02.618" endtime="20210623 12:17:03.626"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:02.618" endtime="20210623 12:17:03.626"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=username</arg>
+<arg>${USER.usuarioname}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:03.626" level="INFO">Typing text 'alexandre' into text field 'id=username'.</msg>
+<status status="PASS" starttime="20210623 12:17:03.626" endtime="20210623 12:17:03.800"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:04.803" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:03.800" endtime="20210623 12:17:04.803"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:03.800" endtime="20210623 12:17:04.804"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=password</arg>
+<arg>${USER.password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:04.805" level="INFO">Typing password into text field 'id=password'.</msg>
+<msg timestamp="20210623 12:17:04.852" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20210623 12:17:04.884" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20210623 12:17:04.804" endtime="20210623 12:17:04.885"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:02.617" endtime="20210623 12:17:04.885"/>
+</kw>
+<kw name="3 - Realizar Login" library="PO_Login">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:06.886" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210623 12:17:04.886" endtime="20210623 12:17:06.886"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=login</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:06.886" level="INFO">Clicking element 'id=login'.</msg>
+<status status="PASS" starttime="20210623 12:17:06.886" endtime="20210623 12:17:07.064"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:04.885" endtime="20210623 12:17:07.064"/>
+</kw>
+<status status="PASS" starttime="20210623 12:16:58.123" endtime="20210623 12:17:07.065"/>
+</test>
+<test id="s1-t2" name="CT02 - Acessar Tela Menu do Sistema">
+<kw name="1 - Validar Página do Sistema" library="PO_Sistema">
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${textoInicialSistema}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210623 12:17:07.067" endtime="20210623 12:17:07.084"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:07.066" endtime="20210623 12:17:07.084"/>
+</kw>
+<kw name="2 - Acionar Cadastrar Novo Cliente" library="PO_Sistema">
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:09.094" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210623 12:17:07.084" endtime="20210623 12:17:09.095"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=btn-cadastro-cliente</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:09.096" level="INFO">Clicking element 'id=btn-cadastro-cliente'.</msg>
+<status status="PASS" starttime="20210623 12:17:09.095" endtime="20210623 12:17:09.328"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:07.084" endtime="20210623 12:17:09.329"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:07.066" endtime="20210623 12:17:09.329"/>
+</test>
+<test id="s1-t3" name="CT03 - Acessar Tela Cadastro de Cliente">
+<kw name="1 - Validar Página de Cadastro de Cliente" library="PO_CadastroCliente">
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${textoInicialCadastroCliente}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210623 12:17:09.331" endtime="20210623 12:17:09.351"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:09.331" endtime="20210623 12:17:09.351"/>
+</kw>
+<kw name="2 - Preencher Campos de Cadastro de Cliente" library="PO_CadastroCliente">
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:10.369" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:09.352" endtime="20210623 12:17:10.369"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:09.352" endtime="20210623 12:17:10.369"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=nome_cliente</arg>
+<arg>${CLIENTE.nome}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:10.369" level="INFO">Typing text 'Benjamin Carlos Raul Nogueira' into text field 'id=nome_cliente'.</msg>
+<status status="PASS" starttime="20210623 12:17:10.369" endtime="20210623 12:17:10.552"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:11.555" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:10.553" endtime="20210623 12:17:11.556"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:10.553" endtime="20210623 12:17:11.557"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=cpf</arg>
+<arg>${CLIENTE.CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:11.559" level="INFO">Typing text '03476000850' into text field 'id=cpf'.</msg>
+<status status="PASS" starttime="20210623 12:17:11.557" endtime="20210623 12:17:11.698"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:12.704" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:11.699" endtime="20210623 12:17:12.705"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:11.699" endtime="20210623 12:17:12.705"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=dtnasc</arg>
+<arg>${CLIENTE.dataNascimento}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:12.706" level="INFO">Typing text '15051947' into text field 'id=dtnasc'.</msg>
+<status status="PASS" starttime="20210623 12:17:12.705" endtime="20210623 12:17:12.852"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//input[@value='masculino']</arg>
+<arg>${CLIENTE.sexo}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:12.855" level="INFO">Clicking element 'xpath=//input[@value='masculino']'.</msg>
+<status status="PASS" starttime="20210623 12:17:12.852" endtime="20210623 12:17:12.895"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:13.899" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:12.896" endtime="20210623 12:17:13.900"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:12.896" endtime="20210623 12:17:13.900"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:14.901" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:13.900" endtime="20210623 12:17:14.901"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:13.900" endtime="20210623 12:17:14.901"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=prependedtext</arg>
+<arg>${CLIENTE.telefone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:14.902" level="INFO">Typing text '99999999999' into text field 'id=prependedtext'.</msg>
+<status status="PASS" starttime="20210623 12:17:14.901" endtime="20210623 12:17:15.063"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:16.068" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:15.063" endtime="20210623 12:17:16.068"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:15.063" endtime="20210623 12:17:16.069"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${CLIENTE.email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:16.069" level="INFO">Typing text 'bbenjamincarlosraulnogueira@gm.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20210623 12:17:16.069" endtime="20210623 12:17:16.212"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:17.216" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:16.212" endtime="20210623 12:17:17.216"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:16.212" endtime="20210623 12:17:17.218"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=cep</arg>
+<arg>${CLIENTE.CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.221" level="INFO">Typing text '21852580' into text field 'id=cep'.</msg>
+<status status="PASS" starttime="20210623 12:17:17.218" endtime="20210623 12:17:17.318"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>200ms</arg>
+<arg>Realizar Pesquisa Por CEP Aguardando a Rua "${rua}"</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.319" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:17.319" endtime="20210623 12:17:17.356"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.375" level="INFO">${ruaEsperada} = ...</msg>
+<status status="PASS" starttime="20210623 12:17:17.356" endtime="20210623 12:17:17.375"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210623 12:17:17.376" level="FAIL">... != Rua Congo</msg>
+<status status="FAIL" starttime="20210623 12:17:17.375" endtime="20210623 12:17:17.376"/>
+</kw>
+<status status="FAIL" starttime="20210623 12:17:17.318" endtime="20210623 12:17:17.377"/>
+</kw>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.587" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:17.587" endtime="20210623 12:17:17.646"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.673" level="INFO">${ruaEsperada} = ...</msg>
+<status status="PASS" starttime="20210623 12:17:17.647" endtime="20210623 12:17:17.673"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210623 12:17:17.673" level="FAIL">... != Rua Congo</msg>
+<status status="FAIL" starttime="20210623 12:17:17.673" endtime="20210623 12:17:17.673"/>
+</kw>
+<status status="FAIL" starttime="20210623 12:17:17.585" endtime="20210623 12:17:17.673"/>
+</kw>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.879" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:17.879" endtime="20210623 12:17:17.938"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:17.958" level="INFO">${ruaEsperada} = ...</msg>
+<status status="PASS" starttime="20210623 12:17:17.939" endtime="20210623 12:17:17.958"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210623 12:17:17.959" level="FAIL">... != Rua Congo</msg>
+<status status="FAIL" starttime="20210623 12:17:17.958" endtime="20210623 12:17:17.959"/>
+</kw>
+<status status="FAIL" starttime="20210623 12:17:17.879" endtime="20210623 12:17:17.959"/>
+</kw>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.169" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:18.169" endtime="20210623 12:17:18.227"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.250" level="INFO">${ruaEsperada} = ...</msg>
+<status status="PASS" starttime="20210623 12:17:18.227" endtime="20210623 12:17:18.250"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210623 12:17:18.251" level="FAIL">... != Rua Congo</msg>
+<status status="FAIL" starttime="20210623 12:17:18.251" endtime="20210623 12:17:18.251"/>
+</kw>
+<status status="FAIL" starttime="20210623 12:17:18.169" endtime="20210623 12:17:18.251"/>
+</kw>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.468" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:18.468" endtime="20210623 12:17:18.530"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.556" level="INFO">${ruaEsperada} = ...</msg>
+<status status="PASS" starttime="20210623 12:17:18.530" endtime="20210623 12:17:18.556"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20210623 12:17:18.556" level="FAIL">... != Rua Congo</msg>
+<status status="FAIL" starttime="20210623 12:17:18.556" endtime="20210623 12:17:18.556"/>
+</kw>
+<status status="FAIL" starttime="20210623 12:17:18.468" endtime="20210623 12:17:18.556"/>
+</kw>
+<kw name="Realizar Pesquisa Por CEP Aguardando a Rua &quot;Rua Congo&quot;" library="PO_CadastroCliente" sourcename="Realizar Pesquisa Por CEP Aguardando a Rua &quot;${rua}&quot;">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Pesquisar')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.762" level="INFO">Clicking element 'xpath=//button[contains(text(),'Pesquisar')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:18.762" endtime="20210623 12:17:18.817"/>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<var>${ruaEsperada}</var>
+<arg>id=rua</arg>
+<arg>value</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<msg timestamp="20210623 12:17:18.839" level="INFO">${ruaEsperada} = Rua Congo</msg>
+<status status="PASS" starttime="20210623 12:17:18.818" endtime="20210623 12:17:18.839"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${ruaEsperada}</arg>
+<arg>${rua}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20210623 12:17:18.839" endtime="20210623 12:17:18.839"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:18.762" endtime="20210623 12:17:18.839"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:17.318" endtime="20210623 12:17:18.839"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:19.842" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:18.839" endtime="20210623 12:17:19.843"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:18.839" endtime="20210623 12:17:19.843"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=numero</arg>
+<arg>${CLIENTE.numero}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:19.843" level="INFO">Typing text '9' into text field 'id=numero'.</msg>
+<status status="PASS" starttime="20210623 12:17:19.843" endtime="20210623 12:17:19.932"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//select/option[@value='Casado(a)']</arg>
+<arg>${CLIENTE.estadoCivil}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:19.934" level="INFO">Clicking element 'xpath=//select/option[@value='Casado(a)']'.</msg>
+<status status="PASS" starttime="20210623 12:17:19.932" endtime="20210623 12:17:19.960"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:20.973" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:19.960" endtime="20210623 12:17:20.973"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:19.960" endtime="20210623 12:17:20.973"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Testes Automatizados')]/preceding::input[1]</arg>
+<arg>${CLIENTE.interesses}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:20.975" level="INFO">Clicking element 'xpath=//span[contains(text(),'Testes Automatizados')]/preceding::input[1]'.</msg>
+<status status="PASS" starttime="20210623 12:17:20.973" endtime="20210623 12:17:21.037"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:22.040" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:21.037" endtime="20210623 12:17:22.040"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:21.037" endtime="20210623 12:17:22.041"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Desenvolvimento de Software')]/preceding::input[1]</arg>
+<arg>${CLIENTE.interesses}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:22.041" level="INFO">Clicking element 'xpath=//span[contains(text(),'Desenvolvimento de Software')]/preceding::input[1]'.</msg>
+<status status="PASS" starttime="20210623 12:17:22.041" endtime="20210623 12:17:22.142"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:23.147" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:22.143" endtime="20210623 12:17:23.148"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:22.143" endtime="20210623 12:17:23.148"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Video Games')]/preceding::input[1]</arg>
+<arg>${CLIENTE.interesses}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:23.148" level="INFO">Clicking element 'xpath=//span[contains(text(),'Video Games')]/preceding::input[1]'.</msg>
+<status status="PASS" starttime="20210623 12:17:23.148" endtime="20210623 12:17:23.222"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:24.228" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:23.223" endtime="20210623 12:17:24.228"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:23.222" endtime="20210623 12:17:24.229"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[contains(text(),'Livros')]/preceding::input[1]</arg>
+<arg>${CLIENTE.interesses}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:24.229" level="INFO">Clicking element 'xpath=//span[contains(text(),'Livros')]/preceding::input[1]'.</msg>
+<status status="PASS" starttime="20210623 12:17:24.229" endtime="20210623 12:17:24.313"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:25.316" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:24.314" endtime="20210623 12:17:25.316"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:24.313" endtime="20210623 12:17:25.316"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:09.352" endtime="20210623 12:17:25.317"/>
+</kw>
+<kw name="3 - Cadastrar Cliente" library="PO_CadastroCliente">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=cadastrar</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:25.317" level="INFO">Clicking element 'id=cadastrar'.</msg>
+<status status="PASS" starttime="20210623 12:17:25.317" endtime="20210623 12:17:25.404"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>id=msg</arg>
+<arg>3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210623 12:17:25.404" endtime="20210623 12:17:25.448"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${msgOk}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210623 12:17:25.448" endtime="20210623 12:17:25.487"/>
+</kw>
+<kw name="TempoExecução" library="Base">
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:26.491" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210623 12:17:25.488" endtime="20210623 12:17:26.491"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:25.488" endtime="20210623 12:17:26.491"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:25.317" endtime="20210623 12:17:26.491"/>
+</kw>
+<kw name="4 - Realizar Logout" library="PO_CadastroCliente">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//button[contains(text(),'Logout')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210623 12:17:26.491" level="INFO">Clicking element 'xpath=//button[contains(text(),'Logout')]'.</msg>
+<status status="PASS" starttime="20210623 12:17:26.491" endtime="20210623 12:17:26.607"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<arg>${textoInicialHome}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210623 12:17:26.607" endtime="20210623 12:17:26.627"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:26.491" endtime="20210623 12:17:26.628"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:09.330" endtime="20210623 12:17:26.628"/>
+</test>
+<kw name="Fechar Navegador" library="Base" type="TEARDOWN">
+<kw name="Sleep" library="BuiltIn">
+<arg>3</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210623 12:17:29.642" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20210623 12:17:26.631" endtime="20210623 12:17:29.642"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210623 12:17:29.643" endtime="20210623 12:17:31.832"/>
+</kw>
+<status status="PASS" starttime="20210623 12:17:26.630" endtime="20210623 12:17:31.833"/>
+</kw>
+<status status="PASS" starttime="20210623 12:16:56.154" endtime="20210623 12:17:31.833"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="TestProjetoCliente">TestProjetoCliente</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
