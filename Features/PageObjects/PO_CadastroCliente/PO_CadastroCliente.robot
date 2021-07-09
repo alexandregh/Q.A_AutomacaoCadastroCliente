@@ -18,14 +18,25 @@ Resource        ../../Base/Base.robot
 ${textoInicialCadastroCliente}      xpath=//*[contains(text(), "Cadastro de Cliente")]
 ${rua}                              Rua Congo
 
-### Mensagens
-${msgOk}                            xpath=//div[contains(text(),'Cliente cadastrado com sucesso!')]
-
 ***Keywords***
-1 - Validar Página de Cadastro de Cliente
+Validar Página de Cadastro de Cliente
     Get Text    ${textoInicialCadastroCliente}
 
-2 - Preencher Campos de Cadastro de Cliente
+Preencher Campo Nome sem Sucesso
+    TempoExecução
+    Input Text         id=nome_cliente     ${EMPTY}
+
+    TempoExecução
+    Input Text         id=cpf              ${CLIENTE.CPF}
+
+Preencher Campo CPF sem Sucesso
+    TempoExecução
+    Input Text         id=nome_cliente     ${CLIENTE.nome}
+
+    TempoExecução
+    Input Text         id=cpf              ${EMPTY}
+
+Preencher Campos de Cadastro de Cliente
     TempoExecução
     Input Text         id=nome_cliente     ${CLIENTE.nome}
 
@@ -73,13 +84,30 @@ ${msgOk}                            xpath=//div[contains(text(),'Cliente cadastr
                 ...    ${CLIENTE.interesses}
     TempoExecução
 
-3 - Cadastrar Cliente
+Cadastrar Cliente sem Sucesso (Nome Obrigatório)
+    Preencher Campo Nome sem Sucesso
+    Click Element                   id=cadastrar
+    Wait Until Element Is Visible    id=msg    3s
+    Get Text    ${msgNome}
+    TempoExecução
+    TempoExecução
+
+Cadastrar Cliente sem Sucesso (CPF Obrigatório)
+    Preencher Campo CPF sem Sucesso
+    Click Element                   id=cadastrar
+    Wait Until Element Is Visible    id=msg    3s
+    Get Text    ${msgCPF}
+    TempoExecução
+    TempoExecução
+
+Cadastrar Cliente com Sucesso
     Click Element                   id=cadastrar
     Wait Until Element Is Visible   id=msg      3s
     Get Text                        ${msgOk}
     TempoExecução
+    TempoExecução
 
-4 - Realizar Logout
+Realizar Logout
     Click Element       xpath=//button[contains(text(),'Logout')]
     Get Text            ${textoInicialHome}
 

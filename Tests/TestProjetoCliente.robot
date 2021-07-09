@@ -5,17 +5,52 @@ Suite Setup     Abrir Navegador
 Suite Teardown  Fechar Navegador
 
 ***Test Cases***
-CT01 - Acessar Tela Login
-    1 - Acessar Página de Login
-    2 - Preencher Campos de Login
-    3 - Realizar Login
+CT01 - Acessar Tela Login sem Sucesso
+    Acessar Página de Login sem Sucesso
 
-CT02 - Acessar Tela Menu do Sistema
-    1 - Validar Página do Sistema
-    2 - Acionar Cadastrar Novo Cliente
+CT02 - Acessar Tela Login com Sucesso
+    Acessar Página de Login com Sucesso
 
-CT03 - Acessar Tela Cadastro de Cliente
-    1 - Validar Página de Cadastro de Cliente
-    2 - Preencher Campos de Cadastro de Cliente
-    3 - Cadastrar Cliente
-    4 - Realizar Logout
+CT03 - Realizar Login sem Sucesso (Login Inválido)
+    Preencher Campos de Login sem Sucesso (Login Inválido)
+    #Realizar Login (Como o site não tem validação de Login/Senha não foi incluido a função "Realizar Login")
+
+CT04 - Realizar Login sem Sucesso (Login Vazio)
+    Preencher Campos de Login sem Sucesso (Login Vazio)
+    #Realizar Login (Como o site não tem validação de Login/Senha não foi incluido a função "Realizar Login")
+
+CT05 - Realizar Login sem Sucesso (Senha Inválida)
+    Preencher Campos de Login sem Sucesso (Senha Inválida)
+    #Realizar Login (Como o site não tem validação de Login/Senha não foi incluido a função "Realizar Login")
+
+CT06 - Realizar Login sem Sucesso (Senha Vazia)
+    Preencher Campos de Login sem Sucesso (Senha Vazia)
+    #Realizar Login (Como o site não tem validação de Login/Senha não foi incluido a função "Realizar Login")
+
+CT07 - Realizar Login sem Sucesso (Login / Senha Inválidos)
+    Preencher Campos de Login sem Sucesso (Login / Senha Inválidos)
+    #Realizar Login (Como o site não tem validação de Login/Senha não foi incluido a função "Realizar Login")
+
+CT08 - Realizar Login com Sucesso
+    Preencher Campos de Login com Sucesso
+    Realizar Login
+
+CT09 - Acessar Tela Menu do Sistema com Sucesso
+    Validar Página do Sistema
+    Acionar Cadastrar Novo Cliente
+
+CT10 - Acessar Tela Cadastro de Cliente com Sucesso
+    Validar Página de Cadastro de Cliente
+
+CT11 - Realizar Cadastro de Cliente sem Sucesso (Nome Obrigatório)
+    Cadastrar Cliente sem Sucesso (Nome Obrigatório)
+
+CT12 - Realizar Cadastro de Cliente sem Sucesso (CPF Obrigatório)
+    Cadastrar Cliente sem Sucesso (CPF Obrigatório)
+
+CT13 - Realizar Cadastro de Cliente com Sucesso
+    Preencher Campos de Cadastro de Cliente
+    Cadastrar Cliente com Sucesso
+
+CT14 - Sair do Sistema de Cadastro de Cliente
+    Realizar Logout
