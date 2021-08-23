@@ -1,26 +1,10 @@
-***Settings***
-Resource        ../../Base/Base.robot
-
-***Variables***
-### OBJETOS ###
-&{CLIENTE}          nome=Benjamin Carlos Raul Nogueira
-            ...     CPF=03476000850
-            ...     dataNascimento=15051947
-            ...     sexo=${EMPTY}
-            ...     telefone=99999999999
-            ...     email=bbenjamincarlosraulnogueira@gm.com
-            ...     CEP=21852580
-            ...     numero=9
-            ...     estadoCivil=${EMPTY}
-            ...     interesses=${EMPTY}
-
-### VARIÁVEIS ###
-${textoInicialCadastroCliente}      xpath=//*[contains(text(), "Cadastro de Cliente")]
-${rua}                              Rua Congo
+*** Settings ***
+Resource        ../../Resources/Resource.robot
 
 ***Keywords***
 Validar Página de Cadastro de Cliente
     Get Text    ${textoInicialCadastroCliente}
+    Capture Page Screenshot
 
 Preencher Campo Nome sem Sucesso
     TempoExecução
@@ -28,6 +12,7 @@ Preencher Campo Nome sem Sucesso
 
     TempoExecução
     Input Text         id=cpf              ${CLIENTE.CPF}
+    Capture Page Screenshot
 
 Preencher Campo CPF sem Sucesso
     TempoExecução
@@ -35,6 +20,7 @@ Preencher Campo CPF sem Sucesso
 
     TempoExecução
     Input Text         id=cpf              ${EMPTY}
+    Capture Page Screenshot
 
 Preencher Campos de Cadastro de Cliente
     TempoExecução
@@ -83,22 +69,25 @@ Preencher Campos de Cadastro de Cliente
     Click Element      xpath=//span[contains(text(),'Livros')]/preceding::input[1]         
                 ...    ${CLIENTE.interesses}
     TempoExecução
+    Capture Page Screenshot
 
 Cadastrar Cliente sem Sucesso (Nome Obrigatório)
     Preencher Campo Nome sem Sucesso
-    Click Element                   id=cadastrar
+    Click Element                    id=cadastrar
     Wait Until Element Is Visible    id=msg    3s
     Get Text    ${msgNome}
     TempoExecução
     TempoExecução
+    Capture Page Screenshot
 
 Cadastrar Cliente sem Sucesso (CPF Obrigatório)
     Preencher Campo CPF sem Sucesso
-    Click Element                   id=cadastrar
+    Click Element                    id=cadastrar
     Wait Until Element Is Visible    id=msg    3s
     Get Text    ${msgCPF}
     TempoExecução
     TempoExecução
+    Capture Page Screenshot
 
 Cadastrar Cliente com Sucesso
     Click Element                   id=cadastrar
@@ -106,13 +95,9 @@ Cadastrar Cliente com Sucesso
     Get Text                        ${msgOk}
     TempoExecução
     TempoExecução
+    Capture Page Screenshot
 
 Realizar Logout
     Click Element       xpath=//button[contains(text(),'Logout')]
     Get Text            ${textoInicialHome}
-
-
-Realizar Pesquisa Por CEP Aguardando a Rua "${rua}"
-    Click Element                   xpath=//button[contains(text(),'Pesquisar')]
-    ${ruaEsperada}=                 Get Element Attribute           id=rua        value
-    Should Be Equal As Strings      ${ruaEsperada}         ${rua}
+    Capture Page Screenshot

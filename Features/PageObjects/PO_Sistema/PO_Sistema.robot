@@ -1,13 +1,9 @@
 ***Settings***
-Resource        ../../Base/Base.robot
-
-***Variables***
-### VARIÁVEIS ###
-${textoInicialSistema}      xpath=//*[contains(text(), "Bem vindo ao Sistema de Cadastro de Clientes")]
+Resource                ../../Resources/Resource.robot
 
 ***Keywords***
 Validar Página do Sistema
-    Get Text    ${textoInicialSistema}
+    Get Text            ${textoInicialSistema}
 
 Acionar Cadastrar Novo Cliente
     Sleep               2

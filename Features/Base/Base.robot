@@ -1,6 +1,5 @@
 ***Settings***
 Library     SeleniumLibrary
-Library     Process
 
 ***Variables***
 ### OBJETOS ###
