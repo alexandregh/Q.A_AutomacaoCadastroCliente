@@ -9,7 +9,7 @@ O exemplo que simula a automação de cadastro de clientes na web com Robot Fram
 
 - **Features**
 - - **Base**
-- - **Base.robot**
+- - - **Base.robot**
 - - **PageObjects**
 - - - **PO_CadastroCliente**
 - - - - **PO_CadastroCliente.robot**
