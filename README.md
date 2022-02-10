@@ -17,8 +17,6 @@ O exemplo que simula a automação de cadastro de clientes na web com Robot Fram
 - - - - **PO_Sistema.robot**
 - - - **PO_Sistema**
 - - - - **PO_Sistema.robot**
-- - - **Salmo91_Copy.txt**
-- - - **Salmo91.txt**
 - - **Resources**
 - - - **Messages.robot**
 - - - **Resource.robot**
